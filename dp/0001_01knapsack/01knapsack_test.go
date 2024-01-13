@@ -1,9 +1,6 @@
 package knapsack
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
 func TestBasics(t *testing.T) {
 	W := []int{10, 20, 30}
