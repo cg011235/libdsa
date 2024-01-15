@@ -43,3 +43,25 @@ func knapsack_dp(W, V []int, n, c int) int {
 
 	return knapsack(dp, W, V, n, c)
 }
+
+func knapsack_bottomup(weights []int, values []int, W int) int {
+	n := len(weights)
+	dp := make([][]int, n+1)
+	for i := range dp {
+		dp[i] = make([]int, W+1)
+	}
+
+	for i := 0; i <= n; i++ {
+		for w := 0; w <= W; w++ {
+			if i == 0 || w == 0 {
+				dp[i][w] = 0
+			} else if weights[i-1] <= w {
+				dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]]+values[i-1])
+			} else {
+				dp[i][w] = dp[i-1][w]
+			}
+		}
+	}
+
+	return dp[n][W]
+}

@@ -13,6 +13,11 @@ func TestBasics(t *testing.T) {
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
+
+	result = knapsack_bottomup(W, V, c)
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
 }
 
 func TestEmptyKnapsack(t *testing.T) {
@@ -23,6 +28,11 @@ func TestEmptyKnapsack(t *testing.T) {
 	expected := 0
 
 	result := knapsack_dp(W, V, n, c)
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
+
+	result = knapsack_bottomup(W, V, c)
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
@@ -39,6 +49,11 @@ func TestSingleItemFits(t *testing.T) {
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
+
+	result = knapsack_bottomup(W, V, c)
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
 }
 
 func TestAllItemsFit(t *testing.T) {
@@ -49,6 +64,11 @@ func TestAllItemsFit(t *testing.T) {
 	expected := 6
 
 	result := knapsack_dp(W, V, n, c)
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
+
+	result = knapsack_bottomup(W, V, c)
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
@@ -161,6 +181,11 @@ func TestLargeCapacity(t *testing.T) {
 	expected := 5319
 
 	result := knapsack_dp(W, V, n, c)
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
+
+	result = knapsack_bottomup(W, V, c)
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
