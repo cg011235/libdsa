@@ -40,3 +40,25 @@ func lcs_dp(p, q string) int {
 	}
 	return lcs(dp, p, q, n, m)
 }
+
+func lcs_bottom_up(p, q string) int {
+	n := len(p)
+	m := len(q)
+	dp := make([][]int, n+1)
+	for i := range dp {
+		dp[i] = make([]int, m+1)
+	}
+
+	for i := 0; i <= n; i++ {
+		for j := 0; j <= m; j++ {
+			if i == 0 || j == 0 {
+				dp[i][j] = 0
+			} else if p[i-1] == q[j-1] {
+				dp[i][j] = 1 + dp[i-1][j-1]
+			} else {
+				dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+			}
+		}
+	}
+	return dp[n][m]
+}

@@ -10,6 +10,12 @@ func TestBasics(t *testing.T) {
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
+
+	result = lcs_bottom_up(p, q)
+	expected = 3
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
 }
 
 func TestBothStringEmpty(t *testing.T) {
@@ -17,6 +23,12 @@ func TestBothStringEmpty(t *testing.T) {
 	q := ""
 	result := lcs_dp(p, q)
 	expected := 0
+	if result != expected {
+		t.Errorf("got %q, wanted %q", result, expected)
+	}
+
+	result = lcs_bottom_up(p, q)
+	expected = 0
 	if result != expected {
 		t.Errorf("got %q, wanted %q", result, expected)
 	}
