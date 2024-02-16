@@ -2,7 +2,7 @@
  * You have a string S and an array roll.
  * Each element in the array roll corresponds to an operation to be applied to the string S.
  * The operation, referred to as "rolling," involves modifying the characters of the string based on their ASCII values.
-  When you "roll" a character, you increase its ASCII value by 1.  
+  When you "roll" a character, you increase its ASCII value by 1.
 For example, rolling a (ASCII 97) would result in b (ASCII 98).
 If the character is z (ASCII 122), rolling it wraps around to a (ASCII 97), maintaining the cyclic nature of the alphabet.
 For each roll[i], the operation is applied to the first roll[i] characters of the string S.
